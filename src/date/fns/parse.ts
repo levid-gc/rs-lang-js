@@ -1,5 +1,5 @@
-import { isInteger } from '../number';
-import { isString } from '../string';
+import { isInteger } from '../../number/fns';
+import { isString } from '../../string/fns';
 import { isDate } from './isDate';
 
 export function parse(value: string | number | Date): Date {

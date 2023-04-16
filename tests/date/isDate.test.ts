@@ -1,4 +1,4 @@
-import { isDate } from '../../src/date';
+import { isDate } from '../../src/date/fns/isDate';
 
 test('isDate', () => {
   expect(isDate(new Date())).toBe(true);

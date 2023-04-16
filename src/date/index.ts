@@ -1,10 +1,4 @@
 export * from './DayOfWeek';
 export * from './TimeSpan';
-export * from './parse';
-export * from './isDate';
-export * from './isTimeSpan';
-export * from './getDay';
-export * from './getDayOfWeek';
-export * from './getMonth';
-export * from './addDays';
-export * from './addMonths';
+export * from './DateTime';
+export * as DateFns from './fns';

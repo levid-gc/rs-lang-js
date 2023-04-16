@@ -1,4 +1,4 @@
-import { TimeSpan } from './TimeSpan';
+import { TimeSpan } from '../TimeSpan';
 import { isDate } from './isDate';
 
 export function subDate(date1: Date, date2: Date): TimeSpan {

@@ -1,4 +1,5 @@
-import { DayOfWeek, getDayOfWeek } from '../../src/date';
+import { DayOfWeek } from '../../src/date';
+import { getDayOfWeek } from '../../src/date/fns';
 
 test('getDayOfWeek', () => {
   expect(getDayOfWeek(new Date('2023-04-16'))).toBe(DayOfWeek.Sunday);

@@ -1,4 +1,4 @@
-import { addDays } from '../../src/date';
+import { addDays } from '../../src/date/fns';
 
 it('should throw when the days is not a valid number', () => {
   expect(() => addDays(new Date(), Number.NaN)).toThrow();

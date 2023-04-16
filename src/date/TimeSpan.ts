@@ -1,4 +1,4 @@
-import { isFinite, isInteger } from '../number';
+import { isFinite, isInteger } from '../number/fns';
 
 export class TimeSpan {
   private tickets: number = 0;

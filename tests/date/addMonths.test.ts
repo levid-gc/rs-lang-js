@@ -1,4 +1,4 @@
-import { addMonths } from '../../src/date';
+import { addMonths } from '../../src/date/fns';
 
 it('should throw when the months is not a valid number', () => {
   expect(() => addMonths(new Date(), Number.NaN)).toThrow();

@@ -1,2 +1,1 @@
-export * from './isInteger';
-export * from './isFinite';
+export * as NumberFns from './fns';

@@ -1,4 +1,4 @@
-import { isInteger } from '../number';
+import { isInteger } from '../../number/fns';
 import { isDate } from './isDate';
 
 /**
