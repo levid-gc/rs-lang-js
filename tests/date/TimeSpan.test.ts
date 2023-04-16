@@ -2,7 +2,7 @@ import { TimeSpan } from '../../src/date';
 
 describe('TimeSpan', () => {
   test('TimeSpan(1)', () => {
-    const timeSpan = new TimeSpan(1);
+    const timeSpan = TimeSpan.fromMilliSeconds(1);
 
     expect(timeSpan.totalDays).toBe(0);
     expect(timeSpan.totalHours).toBe(0);
@@ -18,7 +18,7 @@ describe('TimeSpan', () => {
   });
 
   test('TimeSpan(11122233344)', () => {
-    const timeSpan = new TimeSpan(11122233344);
+    const timeSpan = TimeSpan.fromMilliSeconds(11122233344);
 
     expect(timeSpan.totalDays).toBe(128.73);
     expect(timeSpan.totalHours).toBe(3089.509);

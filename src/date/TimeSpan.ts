@@ -1,4 +1,4 @@
-import { isFinite } from '../number';
+import { isFinite, isInteger } from '../number';
 
 export class TimeSpan {
   private tickets: number = 0;
@@ -43,12 +43,16 @@ export class TimeSpan {
    *
    * @param tickets Time period expressed in ms units
    */
-  public constructor(tickets: number) {
-    if (!isFinite(tickets)) {
+  private constructor(tickets: number) {
+    if (!isInteger(tickets)) {
       throw new Error('Invalid value of tickets');
     }
 
-    this.tickets = Math.round(tickets);
+    this.tickets = tickets;
+  }
+
+  public get [Symbol.toStringTag](): string {
+    return 'TimeSpan';
   }
 
   public get totalMilliSeconds(): number {
@@ -76,16 +80,13 @@ export class TimeSpan {
   }
 
   public get hours(): number {
-    const remains =
-      this.totalMilliSeconds - TimeSpan.daysToMilliSeconds(this.days);
+    const remains = this.totalMilliSeconds - TimeSpan.daysToMilliSeconds(this.days);
     return Math.floor(remains / 1000 / 60 / 60);
   }
 
   public get minutes(): number {
     const remains =
-      this.totalMilliSeconds -
-      TimeSpan.daysToMilliSeconds(this.days) -
-      TimeSpan.hoursToMilliSeconds(this.hours);
+      this.totalMilliSeconds - TimeSpan.daysToMilliSeconds(this.days) - TimeSpan.hoursToMilliSeconds(this.hours);
     return Math.floor(remains / 1000 / 60);
   }
 
