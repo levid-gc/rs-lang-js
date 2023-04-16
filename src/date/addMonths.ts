@@ -1,3 +1,6 @@
+import { isInteger } from '../number';
+import { isDate } from './isDate';
+
 /**
  * add specific number of months depends on the provided date
  *
@@ -6,9 +9,12 @@
  * @returns
  */
 export function addMonths(date: Date, months: number): Date {
-  months = Number(months);
-  if (Number.isNaN(months)) {
-    throw new Error('invalid value of months');
+  if (!isDate(date)) {
+    throw new Error('Invalid value of date');
+  }
+
+  if (!isInteger(months)) {
+    throw new Error('Invalid value of months');
   }
 
   const newDate = new Date(date);

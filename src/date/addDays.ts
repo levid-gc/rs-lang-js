@@ -1,3 +1,6 @@
+import { isInteger } from '../number';
+import { isDate } from './isDate';
+
 /**
  * add specific number of days depends on the provided date
  *
@@ -6,9 +9,12 @@
  * @returns
  */
 export function addDays(date: Date, days: number): Date {
-  days = Number(days);
-  if (Number.isNaN(days)) {
-    throw new Error('invalid value of days');
+  if (!isDate(date)) {
+    throw new Error('Invalid value of date');
+  }
+
+  if (!isInteger(days)) {
+    throw new Error('Invalid value of days');
   }
 
   const newDate = new Date(date);

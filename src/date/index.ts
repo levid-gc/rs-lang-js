@@ -1,4 +1,7 @@
 export * from './DayOfWeek';
+export * from './TimeSpan';
+export * from './parse';
+export * from './isDate';
 export * from './getDay';
 export * from './getDayOfWeek';
 export * from './getMonth';
